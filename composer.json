@@ -1,0 +1,20 @@
+{
+    "name": "william/schooner",
+    "description": "An app to determine score and top categories of schooner dice rolls",
+    "type": "project",
+    "require": {
+        "symfony/console": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "William\\": "src/William/"
+        }
+    },
+    "authors": [
+        {
+            "name": "William Lang",
+            "email": "lang.h.william@gmail.com"
+        }
+    ]
+}
