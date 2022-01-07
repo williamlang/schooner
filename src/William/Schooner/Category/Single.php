@@ -33,7 +33,7 @@ class Single extends Category {
      * @return boolean
      */
     public function qualifies(array $diceRoll) : bool {
-        return true;
+        return in_array($this->dice, $diceRoll);
     }
 
     /**

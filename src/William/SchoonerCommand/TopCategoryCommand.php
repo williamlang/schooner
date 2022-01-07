@@ -43,7 +43,7 @@ class TopCategoryCommand extends Command {
 
         // write output
         try {
-            $output->writeln($schooner->topCategories($diceRoll));
+            $output->writeln(join(", ", $schooner->topCategories($diceRoll)));
         } catch (Exception $e) {
             $output->writeln($e->getMessage());
         }

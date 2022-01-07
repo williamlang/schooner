@@ -4,9 +4,7 @@ namespace William\Schooner\Category;
 
 use William\Schooner\Category;
 
-class FullHouse extends Category {
-
-    const SCORE = 25;
+class FourOfAKind extends Category {
 
     /**
      * @see parent
@@ -22,7 +20,7 @@ class FullHouse extends Category {
             $counts[$roll]++;
         }
 
-        return in_array(3, $counts) && in_array(2, $counts);
+        return in_array(4, $counts);
     }
 
     /**
@@ -33,6 +31,6 @@ class FullHouse extends Category {
             return 0;
         }
 
-        return self::SCORE;
+        return array_sum($diceRoll);
     }
 }

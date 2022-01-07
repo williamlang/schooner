@@ -19,12 +19,16 @@ class SmallStraight extends Category {
         for ($i = 1; $i < sizeof($diceRoll); $i++) {
             if ($diceRoll[$i] - $diceRoll[$i - 1] == 1) {
                 $sequenceCount++;
+
+                if ($sequenceCount == self::SEQUENCE_COUNT) {
+                    return true;
+                }
             } else {
                 $sequenceCount = 1;
             }
         }
 
-        return $sequenceCount == self::SEQUENCE_COUNT;
+        return false;
     }
 
     /**

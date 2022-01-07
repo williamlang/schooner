@@ -2,6 +2,7 @@
 
 namespace William;
 
+use InvalidArgumentException;
 use William\Schooner as WilliamSchooner;
 use William\Schooner\Category;
 use William\Schooner\Category\AllDifferent;
@@ -18,8 +19,6 @@ use William\Schooner\Exception;
 class Schooner {
 
     const DICE_COUNT = 5;
-    const MIN_ROLL = 1;
-    const MAX_ROLL = 8;
 
     /**
      * Our array of categories and their classes
@@ -62,12 +61,12 @@ class Schooner {
      * @return integer
      */
     public function score(string $category, array $diceRoll) : int {
-        if (sizeof($diceRoll) != self::DICE_COUNT) {
-            throw new Exception("Invalid dice count. Need 5.");
+        if (empty($this->categories[$category]) || !($this->categories[$category] instanceof Category)) {
+            throw new InvalidArgumentException("Category not found!");
         }
 
-        if (empty($this->categories[$category]) || !($this->categories[$category] instanceof Category)) {
-            throw new Exception("Category not found!");
+        if (sizeof($diceRoll) != self::DICE_COUNT) {
+            throw new Exception("Invalid dice count. Need 5.");
         }
 
         /** @var Category $categoryClass */
@@ -97,6 +96,6 @@ class Schooner {
 
         // sort maintaining index assoc
         asort($results, SORT_NUMERIC);
-        return array_reverse($results, true);
+        return array_reverse(array_keys($results), true);
     }
 }
