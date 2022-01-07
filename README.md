@@ -48,4 +48,4 @@ https://getcomposer.org/download/
 
 ### Run Tests
 
-`vendor/bin/phpunit test src/test/`
+`vendor/bin/phpunit src/test/`
