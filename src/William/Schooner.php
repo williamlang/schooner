@@ -3,7 +3,6 @@
 namespace William;
 
 use InvalidArgumentException;
-use William\Schooner as WilliamSchooner;
 use William\Schooner\Category;
 use William\Schooner\Category\AllDifferent;
 use William\Schooner\Category\Chance;
