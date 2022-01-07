@@ -37,4 +37,8 @@ class SchoonerTest extends TestCase {
         $this->assertNotNull($this->schooner->score(Category::ONES, [1, 1, 1, 1]));
     }
 
+    public function testTopCategory() {
+        $this->assertEquals([Category::SCHOONER, Category::ONES, Category::CHANCE], $this->schooner->topCategories([1, 1, 1, 1, 1]));
+    }
+
 }

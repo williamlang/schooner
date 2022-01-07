@@ -94,7 +94,13 @@ class Schooner {
         }
 
         // sort maintaining index assoc
-        asort($results, SORT_NUMERIC);
-        return array_reverse(array_keys($results), true);
+        arsort($results);
+
+        $topCategories = [];
+        foreach ($results as $category => $score) {
+            $topCategories[] = $category;
+        }
+
+        return $topCategories;
     }
 }
