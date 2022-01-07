@@ -2,6 +2,8 @@
 
 Schooner Dice by William Lang
 
+Note that PHP 8.0 doesn't have enums, so I made due with other options.
+
 ## Instructions
 
 ### Install PHP
@@ -33,11 +35,12 @@ https://getcomposer.org/download/
 
 ### Run Composer
 
-`composer install`
+`composer.phar install`
 
 ### Run code
 
-`php schooner.php`
+`php schooner.php schooner:score ONES 1 1 1 1 1`
+`php schooner.php schooner:top-category 1 1 1 1 1`
 
 ### Run Tests
 
