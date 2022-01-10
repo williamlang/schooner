@@ -25,4 +25,8 @@ class LargeStraightTest extends TestCase {
     public function testLargeStraightOutOfOrder() {
         $this->assertEquals(LargeStraight::SCORE, $this->largeStraight->score([1, 4, 2, 3, 5]));
     }
+
+    public function testSmallStraightInLargeStraight() {
+        $this->assertEquals(0, $this->largeStraight->score([1, 4, 2, 3, 6]));
+    }
 }
